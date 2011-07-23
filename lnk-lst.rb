@@ -1,4 +1,6 @@
+require 'rubygems'
 require 'sinatra'
+require 'erb'
 
 configure do
   require 'redis'
