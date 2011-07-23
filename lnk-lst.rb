@@ -8,8 +8,6 @@ configure do
   REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 end
 
-redis = Redis.new
-
 helpers do
   include Rack::Utils
   alias_method :h, :escape_html
@@ -26,13 +24,13 @@ end
 post '/' do
   if params[:url] and not params[:url].empty?
     @shortcode = random_string 5
-    redis.setnx "links:#{@shortcode}", params[:url]
+    REDIS.setnx "links:#{@shortcode}", params[:url]
   end
   erb :index
 end
 
 get '/:shortcode' do
-  @url = redis.get "links:#{params[:shortcode]}"
+  @url = REDIS.get "links:#{params[:shortcode]}"
   redirect @url || '/'
 end
 
