@@ -5,4 +5,4 @@ Bundler.require
 
 require "./lnk-lst"
 
-run lnk-lst
+run Sinatra::Application
