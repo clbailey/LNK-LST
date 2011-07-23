@@ -1,0 +1,13 @@
+App: LNK LST
+Author: Carter Bailey
+Creation Date: 23 July 2011
+Last update date: 23 July 2011
+
+Description:
+This is starting out as a link shortener app (similar to bit.ly), and based off of a Nettuts+ project (http://net.tutsplus.com/tutorials/ruby/how-to-build-a-shortlink-app-with-ruby-and-redis/)
+It will eventually become a link list builder. That is, it will take a list of url links, store them in a redis database, and generate a shortened link that will render the list.
+
+I intend for this app to be used with other apps in mind (primarily Twitter), where the number of characters can severely limit how many links can be posted at once.
+This app will let a Twitter user build a shortened link that points to several links (think of a top-10 list for plants or your 5 favorite recipes).
+
+23-July-2011: Initial commit. Basic shortlink generation ability. Nothing special.
