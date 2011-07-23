@@ -1,3 +1,3 @@
-require "lnklst_app"
+require "lnk-lst"
 
 run Sinatra::Application
