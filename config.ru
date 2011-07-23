@@ -1,3 +1,3 @@
-require "lnk-lst"
+require "lnk-lst.rb"
 
 run Sinatra::Application
