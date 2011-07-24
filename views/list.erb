@@ -1,9 +1,11 @@
 <div class="container">
 	<h1>LNK LST</h1>
-	<% if @url %>
+	<% if @hashurl %>
 	<div class=list>
 		Here's your LNK LST:
-		<a href="<%= @url %>"><%= @url %></a>
+		<% @hashurl.each {|key, value| %>
+			<a href="<%= value %>"><%= key %></a><br />
+		<% } %>
 	</div>
 	<% end %>
 </div>

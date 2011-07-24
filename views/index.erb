@@ -1,7 +1,8 @@
 <div class="container">
 	<h1>LNK LST</h1>
 	<form method="post">
-		<input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
+		Title: <input type="text" value="<%= params[:title] %>" name="title" id="title" />
+		URL: <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
 		<input type="submit" value="shorten" id="submit" />
 	</form>
 	<div class="clear"></div>
