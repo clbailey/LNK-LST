@@ -2,11 +2,11 @@ body {
 	font-family:"Gill Sans", "Gill Sans MT", Sans-Serif;
 }
 .container {
-	width:400px;
+	width:450px;
 	margin:120px auto 0px auto;
 }
 h1 {
-	width:400px;
+	width:450px;
 	margin-bottom:12px;
 	text-align:center;
 	color:#ff4b33;
@@ -16,16 +16,16 @@ h1 {
 }
 form {
 	display:block;
-	width:400px;
+	width:450px;
 }
 input {
 	display:block;
-	float:left;
 	padding:8px;
 	font-size:16px;
 }
-#url {
-	width:230px;
+#url #title {
+	width:200px;
+	float:left;
 	margin-right:12px;
 }
 #submit {
@@ -39,12 +39,12 @@ input {
 }
 .clear {
 	height:1px;
-	width:400px;
+	width:450px;
 	clear:both;
 }
 .result {
 	clear:both;
-	width:400px;
+	width:450px;
 	margin-top:12px;
 	border-top:2px solid #ff4b33;
 	padding-top:12 px;
@@ -60,7 +60,7 @@ input {
 }
 .list {
 	clear:both;
-	width:400px;
+	width:450px;
 	margin-top:12px;
 	padding-top:12px;
 	text-align:center;

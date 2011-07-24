@@ -19,15 +19,15 @@ get '/' do
 end
 
 post '/' do
-  if params[:url] and not params[:url].empty?
+  if params[:url] and params[:title] and not params[:url].empty? and not params[:title].empty?
     @shortcode = random_string 5
-    redis.setnx "links:#{@shortcode}", params[:url]
+    redis.hset "links:#{@shortcode}", params[:title], params[:url]
   end
   erb :index
 end
 
 get '/:shortcode' do
-  @url = redis.get "links:#{params[:shortcode]}"
+  @hashurl = redis.hgetall "links:#{params[:shortcode]}"
   erb :list
 end
 
