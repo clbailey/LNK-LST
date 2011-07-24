@@ -1,9 +1,12 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
-require 'redis'
 
-redis = Redis.new
+configure do
+  require 'redis'
+  uri = URI.parse(ENV["REDISTOGO_URL"])
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+end
 
 helpers do
   include Rack::Utils
@@ -21,13 +24,13 @@ end
 post '/' do
   if params[:url] and not params[:url].empty?
     @shortcode = random_string 5
-    redis.setnx "links:#{@shortcode}", params[:url]
+    REDIS.setnx "links:#{@shortcode}", params[:url]
   end
   erb :index
 end
 
 get '/:shortcode' do
-  @url = redis.get "links:#{params[:shortcode]}"
+  @url = REDIS.get "links:#{params[:shortcode]}"
   erb :list
 end
 
