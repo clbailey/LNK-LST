@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
-requrie 'redis'
+require 'redis'
 
-REDIS = Redis.new
+redis = Redis.new
 
 helpers do
   include Rack::Utils
@@ -21,13 +21,13 @@ end
 post '/' do
   if params[:url] and not params[:url].empty?
     @shortcode = random_string 5
-    REDIS.setnx "links:#{@shortcode}", params[:url]
+    redis.setnx "links:#{@shortcode}", params[:url]
   end
   erb :index
 end
 
 get '/:shortcode' do
-  @url = REDIS.get "links:#{params[:shortcode]}"
-  redirect @url || '/'
+  @url = redis.get "links:#{params[:shortcode]}"
+  erb :list
 end
 
