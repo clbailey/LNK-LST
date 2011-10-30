@@ -2,12 +2,11 @@ require 'rubygems'
 require 'sinatra'
 require 'erb'
 
-#configure do
+configure do
   require 'redis'
-#  uri = URI.parse(ENV["REDISTOGO_URL"])
-#  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-#end
-REDIS = Redis.new
+  uri = URI.parse(ENV["REDISTOGO_URL"])
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+end
 
 helpers do
   include Rack::Utils
