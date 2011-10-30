@@ -1,15 +1,29 @@
-<div class="container">
-	<h1>LNK LST</h1>
-	<form method="post">
-		Title: <input type="text" value="<%= params[:title] %>" name="title" id="title" />
-		URL: <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
-		<input type="submit" value="shorten" id="submit" />
-	</form>
-	<div class="clear"></div>
-	<% if @shortcode %>
-	<div class="result">
-		Your shortened URL is:
-		<a href="http://lnk-lst.heroku.com/<%= @shortcode %>">http://lnk-lst.heroku.com/<%= @shortcode %></a>
+<div class="row">
+	<div class="span8 offset4">
+		<form method="post">
+			<div class="row">
+				<div class="span4">
+				   <h2>Title:</h2> <br />
+				   <input type="text" value="<%= params[:title] %>" name="title" id="title" />
+				</div>
+				<div class="span4">
+				   <h2>URL:</h2> <br />
+				   <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
+				</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="span12">
+					<input type="submit" value="shorten" id="submit" class="btn primary" />
+				</div>
+			</div>
+		</form>
+		<div class="clear"></div>
+		<% if @shortcode %>
+		<div class="result">
+			Your shortened URL is:
+			<a href="http://lnk-lst.heroku.com/<%= @shortcode %>">http://lnk-lst.heroku.com/<%= @shortcode %></a>
+		</div>
+		<% end %>
 	</div>
-	<% end %>
-</div>
+</div

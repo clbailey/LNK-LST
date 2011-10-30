@@ -74,3 +74,19 @@ input {
 	padding:8px;
 }
 
+#titles {
+	float: left;
+}
+
+#urls {
+	float: right;
+}
+
+#sub-title {
+	overflow: hidden;
+}
+
+#action {
+	margin: 0px 181px 0px 181px; 
+	text-align: center;
+}
